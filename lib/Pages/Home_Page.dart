@@ -13,6 +13,9 @@ class HomePage extends StatelessWidget {
       body: Column(
        children: [
          Container(
+           decoration: BoxDecoration(
+             borderRadius: BorderRadius.circular(8)
+           ),
            child: Text('Test'),
          )
        ],
