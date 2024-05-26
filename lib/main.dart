@@ -1,6 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 import 'package:flutter/material.dart';
-import 'package:kuma_apps/Pages/Home_Page.dart';
+import 'package:kuma_apps/Pages/home_page.dart';
 
 
 void main() {
