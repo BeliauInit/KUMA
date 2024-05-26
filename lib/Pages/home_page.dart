@@ -2,6 +2,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:kuma_apps/Navbar/curved_navbar.dart';
 import 'package:kuma_apps/Widget/carousel_manga.dart';
 import 'package:kuma_apps/Widget/continue_watch.dart';
 
@@ -67,17 +68,42 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 12),
-
                 ContinueWatch(),
 
                 SizedBox(height: 32),
-                
+
                 CarouselManga(),
+
+                SizedBox(height: 32),
+
+                Row(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      'GENRES',
+                      style: GoogleFonts.permanentMarker(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 28,
+                        color: Colors.white,
+                      ),
+                    ),
+                    IconButton(
+                        color: Colors.white30,
+                        onPressed: () {
+                          return print('Icon Btn Pressed...');
+                        },
+                        icon: Icon(Icons.arrow_forward_ios_rounded)
+                    ),
+                  ],
+                ),
+
               ],
             ),
           ),
         ),
       ),
+      bottomNavigationBar: CihuyNavbar(selectedItems: 0),
     );
   }
 }

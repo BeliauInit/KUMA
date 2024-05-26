@@ -78,7 +78,7 @@ class ContinueWatch extends StatelessWidget {
               SizedBox(height: 12),
               btnDefaultIco(
                   onTap: () {
-                    return print('Hey');
+                    Navigator.pushReplacementNamed(context, '/detail');
                   },
                   text: 'Continue Watch'),
             ],
