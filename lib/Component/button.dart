@@ -25,7 +25,7 @@ class _btnDefaultIcoState extends State<btnDefaultIco> {
     return GestureDetector(
       onTap: widget.onTap,
       child: Container(
-        padding: EdgeInsetsDirectional.fromSTEB(40.0, 16.0, 40.0, 16.0),
+        padding: EdgeInsetsDirectional.fromSTEB(36.0, 16.0, 36.0, 16.0),
         decoration: BoxDecoration(
             color: Color(0xFFF9CB55),
             borderRadius: BorderRadius.circular(16),
@@ -46,7 +46,7 @@ class _btnDefaultIcoState extends State<btnDefaultIco> {
               width: 12,
             ),
             Icon(
-              CupertinoIcons.arrow_right,
+              Icons.play_arrow,
               color: Color(0xFF151515),
               size: 28,
             )

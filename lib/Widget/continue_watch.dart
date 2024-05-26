@@ -60,7 +60,7 @@ class ContinueWatch extends StatelessWidget {
               ),
               SizedBox(height: 12),
               Text(
-                '95%',
+                '80%',
                 style: GoogleFonts.outfit(
                   fontWeight: FontWeight.w600,
                   fontSize: 20,
@@ -80,7 +80,7 @@ class ContinueWatch extends StatelessWidget {
                   onTap: () {
                     return print('Hey');
                   },
-                  text: 'Continue'),
+                  text: 'Continue Watch'),
             ],
           ),
         ],

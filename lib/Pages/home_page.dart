@@ -1,6 +1,8 @@
 // ignore_for_file: avoid_unnecessary_containers, prefer_const_constructors, prefer_const_literals_to_create_immutables
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:kuma_apps/Widget/carousel_manga.dart';
 import 'package:kuma_apps/Widget/continue_watch.dart';
 
 class HomePage extends StatelessWidget {
@@ -27,11 +29,11 @@ class HomePage extends StatelessWidget {
                     children: [
                       Text(
                         'Hello Aril',
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontWeight: FontWeight.bold,
-                          fontSize: 32,
+                        style: GoogleFonts.permanentMarker(
+                          fontWeight: FontWeight.w300,
+                          fontSize: 40,
                           color: Colors.white,
+                          letterSpacing: 0.5,
                         ),
                       ),
                       Row(
@@ -64,33 +66,13 @@ class HomePage extends StatelessWidget {
                     ],
                   ),
                 ),
-                ContinueWatch(),
-                SizedBox(
-                  height: 32,
-                ),
-                Row(
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      'Recomended',
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontWeight: FontWeight.w900,
-                        fontSize: 28,
-                        color: Colors.white,
-                      ),
-                    ),
-                    IconButton(
-                      color: Colors.white30,
-                        onPressed: () {
-                          return print('Icon Btn Pressed...');
-                        },
-                        icon: Icon(CupertinoIcons.arrow_right)
-                    ),
-                  ],
-                ),
+                SizedBox(height: 12),
 
+                ContinueWatch(),
+
+                SizedBox(height: 32),
+                
+                CarouselManga(),
               ],
             ),
           ),
