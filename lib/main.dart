@@ -1,14 +1,16 @@
 // ignore_for_file: prefer_const_constructors
 import 'package:flutter/material.dart';
 import 'package:kuma_apps/Pages/home_page.dart';
+import 'package:kuma_apps/Pages/splash_screen.dart';
 
 
 void main() {
   runApp(MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: '/',
+      initialRoute: '/home',
       routes: {
-        '/': (context) => HomePage(),
+        '/splash': (context) => Splash(),
+        '/home': (context) => HomePage(),
       },
     ),
   );
