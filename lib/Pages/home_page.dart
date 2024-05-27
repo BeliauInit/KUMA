@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:kuma_apps/Navbar/curved_navbar.dart';
+import 'package:kuma_apps/Navbar/curved_navigator.dart';
 import 'package:kuma_apps/Widget/carousel_manga.dart';
 import 'package:kuma_apps/Widget/continue_watch.dart';
 
@@ -12,7 +13,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black54,
+      backgroundColor: Color(0x0),
       body: SafeArea(
         top: true,
         child: Padding(
@@ -103,7 +104,6 @@ class HomePage extends StatelessWidget {
           ),
         ),
       ),
-      bottomNavigationBar: CihuyNavbar(selectedItems: 0),
     );
   }
 }

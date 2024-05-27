@@ -1,6 +1,7 @@
 // ignore_for_file: avoid_unnecessary_containers, prefer_const_constructors, prefer_const_literals_to_create_immutables
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class CarouselManga extends StatelessWidget {
@@ -70,6 +71,7 @@ class CarouselManga extends StatelessWidget {
                         // Handle image tap
                         print('Tapped on: $imagePath');
                         // perform navigation or any other action here
+                        context.go('/detail');
                       },
                       child: ClipRRect(
                         clipBehavior: Clip.antiAlias,

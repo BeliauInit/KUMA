@@ -3,6 +3,7 @@ import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:kuma_apps/Navbar/curved_navbar.dart';
+import 'package:kuma_apps/Navbar/curved_navigator.dart';
 import 'package:kuma_apps/Widget/continue_watch.dart';
 
 class GrimoiresPage extends StatefulWidget {
@@ -17,6 +18,26 @@ class _GrimoiresPageState extends State<GrimoiresPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xCB000000),
+      appBar: AppBar(
+        toolbarHeight: 120,
+        automaticallyImplyLeading: false,
+        backgroundColor: Colors.transparent,
+        title: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Text(
+              'The Grimoire',
+              style: GoogleFonts.permanentMarker(
+                fontWeight: FontWeight.w300,
+                fontSize: 60,
+                color: Colors.white,
+                letterSpacing: 0.5,
+              ),
+            ),
+          ],
+        ),
+        centerTitle: true,
+      ),
       body: SafeArea(
         top: true,
         child: Padding(
@@ -26,13 +47,11 @@ class _GrimoiresPageState extends State<GrimoiresPage> {
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                ContinueWatch(),
               ],
             ),
           ),
         ),
       ),
-      bottomNavigationBar: CihuyNavbar(selectedItems: 1),
     );
   }
 }

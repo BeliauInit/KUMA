@@ -1,6 +1,15 @@
+// ignore_for_file: avoid_unnecessary_containers, prefer_const_constructors, prefer_const_literals_to_create_immutables
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:kuma_apps/Component/button.dart';
 
-class SignupPage extends StatelessWidget {
+class SignupPage extends StatefulWidget {
+  @override
+  State<SignupPage> createState() => _SignupPageState();
+}
+
+class _SignupPageState extends State<SignupPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,9 +25,10 @@ class SignupPage extends StatelessWidget {
           alignment: Alignment.bottomCenter,
           child: Container(
             width: double.infinity,
-            height: MediaQuery.of(context).size.height * 0.90, // Adjusted the height to reduce the gap
+            height: MediaQuery.of(context).size.height *
+                0.90, // Adjusted the height to reduce the gap
             decoration: BoxDecoration(
-              color: Color(0xFF292419),
+              color: Color(0xFF171717),
               borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(60),
                 topRight: Radius.circular(0),
@@ -32,8 +42,8 @@ class SignupPage extends StatelessWidget {
                     SizedBox(height: 20),
                     Text(
                       'Daftar',
-                      style: TextStyle(
-                        fontSize: 32,
+                      style: GoogleFonts.outfit(
+                        fontSize: 40,
                         color: Color(0xFFF9CB55),
                       ),
                     ),
@@ -48,28 +58,19 @@ class SignupPage extends StatelessWidget {
                     SizedBox(height: 20),
                     _buildTextField('Konfirmasi Kata Sandi', obscureText: true),
                     SizedBox(height: 20),
-                    ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        primary: Color(0xFFF9CB55),
-                        padding: EdgeInsets.symmetric(horizontal: 80, vertical: 16),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                      ),
-                      onPressed: () {},
-                      child: Text(
-                        'Daftar',
-                        style: TextStyle(color: Colors.black, fontSize: 18, fontWeight: FontWeight.bold),
-                      ),
-                    ),
+                    btnDefault(onTap:  () {
+                      context.go('/login');
+                    }, text: 'Sign Up'),
                     SizedBox(height: 20),
                     GestureDetector(
                       onTap: () {
-                        Navigator.pop(context);
+                        context.go('/login');
                       },
                       child: Text(
                         'Sudah punya akun? Masuk',
-                        style: TextStyle(color: Color(0xFF534E59), fontWeight: FontWeight.bold),
+                        style: GoogleFonts.outfit(
+                            color: Color(0xFF534E59),
+                            fontWeight: FontWeight.bold),
                       ),
                     ),
                   ],
@@ -101,10 +102,10 @@ class SignupPage extends StatelessWidget {
               borderSide: BorderSide.none,
             ),
           ),
-          style: TextStyle(color: Colors.white), // User input text color set to white
+          style: TextStyle(
+              color: Colors.white), // User input text color set to white
         ),
       ],
     );
   }
 }
-

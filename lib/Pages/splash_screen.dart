@@ -1,6 +1,7 @@
 // ignore_for_file: avoid_unnecessary_containers, prefer_const_constructors, prefer_const_literals_to_create_immutables
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class Splash extends StatefulWidget {
   const Splash({super.key});
@@ -17,7 +18,7 @@ class _SplashState extends State<Splash> with SingleTickerProviderStateMixin {
     return Timer(
       Duration(milliseconds: 2200), // Increased duration for a smoother animation
           () {
-        Navigator.of(context).pushReplacementNamed('/home');
+        context.go('/login');
       },
     );
   }

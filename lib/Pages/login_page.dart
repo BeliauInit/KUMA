@@ -1,7 +1,16 @@
+// ignore_for_file: avoid_unnecessary_containers, prefer_const_constructors, prefer_const_literals_to_create_immutables
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:kuma_apps/Component/button.dart';
 import 'signup_page.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
+  @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,16 +27,12 @@ class LoginPage extends StatelessWidget {
             Align(
               alignment: Alignment.topCenter,
               child: Padding(
-                padding: const EdgeInsets.only(top: 80),
-                child: Text(
-                  'KUMA',
-                  style: TextStyle(
-                    fontSize: 48,
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
+                  padding: const EdgeInsets.only(top: 80),
+                  child: Image.asset(
+                    'assets/images/logo/Logo Black.png',
+                    fit: BoxFit.contain,
+                    scale: 2,
+                  )),
             ),
             Align(
               alignment: Alignment.bottomCenter,
@@ -35,7 +40,7 @@ class LoginPage extends StatelessWidget {
                 width: double.infinity,
                 height: MediaQuery.of(context).size.height * 0.75,
                 decoration: BoxDecoration(
-                  color: Color(0xFF292419),
+                  color: Color(0xFF171717),
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(90),
                     topRight: Radius.circular(0),
@@ -48,9 +53,9 @@ class LoginPage extends StatelessWidget {
                       children: [
                         SizedBox(height: 40),
                         Text(
-                          'Masuk',
-                          style: TextStyle(
-                            fontSize: 32,
+                          'Login',
+                          style: GoogleFonts.outfit(
+                            fontSize: 40,
                             color: Color(0xFFF9CB55),
                           ),
                         ),
@@ -67,28 +72,21 @@ class LoginPage extends StatelessWidget {
                           ),
                         ),
                         SizedBox(height: 20),
-                        ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            primary: Color(0xFFF9CB55),
-                            padding: EdgeInsets.symmetric(horizontal: 80, vertical: 16),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                          ),
-                          onPressed: () {},
-                          child: Text(
-                            'Masuk',
-                            style: TextStyle(color: Colors.black, fontSize: 18, fontWeight: FontWeight.bold),
-                          ),
-                        ),
+
+                        btnDefault(onTap: () {
+                          context.go('/navbar');
+                        }, text: 'Masuk'),
+
                         SizedBox(height: 20),
                         GestureDetector(
                           onTap: () {
-                            Navigator.pushNamed(context, '/signup');
+                            context.go('/signUp');
                           },
                           child: Text(
                             'Belum mempunyai akun? Daftar',
-                            style: TextStyle(color: Color(0xFF534E59), fontWeight: FontWeight.bold),
+                            style: GoogleFonts.outfit(
+                                color: Color(0xFF534E59),
+                                fontWeight: FontWeight.bold),
                           ),
                         ),
                       ],
@@ -122,7 +120,8 @@ class LoginPage extends StatelessWidget {
               borderSide: BorderSide.none,
             ),
           ),
-          style: TextStyle(color: Colors.white), // User input text color set to white
+          style: TextStyle(
+              color: Colors.white), // User input text color set to white
         ),
       ],
     );
