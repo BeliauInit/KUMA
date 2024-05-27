@@ -101,3 +101,48 @@ class _btnDefaultState extends State<btnDefault> {
     );
   }
 }
+
+//btnDetailManga
+class btnDetailMa extends StatefulWidget {
+  final void Function()? onTap;
+  final String text;
+
+  const btnDetailMa({
+    super.key,
+    required this.onTap,
+    required this.text,
+  });
+
+  @override
+  State<btnDetailMa> createState() => _btnDetailMaState();
+}
+
+class _btnDetailMaState extends State<btnDetailMa> {
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: widget.onTap,
+      child: Container(
+        padding: EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
+        decoration: BoxDecoration(
+            color: Color(0xFFF9CB55),
+            borderRadius: BorderRadius.circular(16),
+            boxShadow: const [BoxShadow(color: Colors.transparent)]),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+                widget.text,
+                style: GoogleFonts.permanentMarker(
+                  color: Color(0xFF151515),
+                  fontWeight: FontWeight.w400,
+                  fontSize: 24,
+                  letterSpacing: 0.36,
+                )
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}

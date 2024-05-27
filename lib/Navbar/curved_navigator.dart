@@ -37,7 +37,7 @@ class _CurvedNavbarState extends State<CurvedNavbar> {
           ],
         ),
         bottomNavigationBar: CurvedNavigationBar(
-            backgroundColor: Color(0xFF171717),
+            backgroundColor: Color(0x171717),
             color: Color(0xFFF9CB55),
             animationCurve: Curves.fastEaseInToSlowEaseOut,
             animationDuration: Duration(milliseconds: 400),

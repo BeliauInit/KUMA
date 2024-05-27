@@ -1,6 +1,7 @@
 // ignore_for_file: avoid_unnecessary_containers, prefer_const_constructors, prefer_const_literals_to_create_immutables
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:kuma_apps/Widget/list_bookmark.dart';
 
 class BookmarkPage extends StatefulWidget {
   const BookmarkPage({super.key});
@@ -13,7 +14,7 @@ class _BookmarkPageState extends State<BookmarkPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xCB000000),
+      backgroundColor: Color(0xFF171717),
       appBar: AppBar(
         toolbarHeight: 120,
         automaticallyImplyLeading: false,
@@ -42,7 +43,17 @@ class _BookmarkPageState extends State<BookmarkPage> {
             child: Column(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.start,
-              children: [],
+              children: [
+                book(),
+                SizedBox(height: 12,),
+                book(),
+                SizedBox(height: 12,),
+                book(),
+                SizedBox(height: 12,),
+                book(),
+                SizedBox(height: 12,),
+                book(),
+              ],
             ),
           ),
         ),

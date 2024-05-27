@@ -1,9 +1,9 @@
 // ignore_for_file: avoid_unnecessary_containers, prefer_const_constructors, prefer_const_literals_to_create_immutables
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:kuma_apps/Navbar/curved_navbar.dart';
-import 'package:kuma_apps/Navbar/curved_navigator.dart';
+import 'package:kuma_apps/Widget/carousel_genre.dart';
 import 'package:kuma_apps/Widget/carousel_manga.dart';
 import 'package:kuma_apps/Widget/continue_watch.dart';
 
@@ -13,7 +13,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0x0),
+      backgroundColor: Color(0xFF171717),
       body: SafeArea(
         top: true,
         child: Padding(
@@ -49,7 +49,7 @@ class HomePage extends StatelessWidget {
                               size: 24.0,
                             ),
                             onPressed: () {
-                              print('IconButton pressed ...');
+                              print('Still in proggres!!');
                             },
                           ),
                           IconButton(
@@ -60,7 +60,7 @@ class HomePage extends StatelessWidget {
                               size: 24.0,
                             ),
                             onPressed: () {
-                              print('IconButton pressed ...');
+                              print('Still in proggres!!');
                             },
                           ),
                         ],
@@ -77,27 +77,7 @@ class HomePage extends StatelessWidget {
 
                 SizedBox(height: 32),
 
-                Row(
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      'GENRES',
-                      style: GoogleFonts.permanentMarker(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 28,
-                        color: Colors.white,
-                      ),
-                    ),
-                    IconButton(
-                        color: Colors.white30,
-                        onPressed: () {
-                          return print('Icon Btn Pressed...');
-                        },
-                        icon: Icon(Icons.arrow_forward_ios_rounded)
-                    ),
-                  ],
-                ),
+                CarouselGenre(),
 
               ],
             ),

@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:kuma_apps/Component/button.dart';
-import 'signup_page.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -68,7 +67,7 @@ class _LoginPageState extends State<LoginPage> {
                           alignment: Alignment.centerRight,
                           child: Text(
                             'Lupa Password?',
-                            style: TextStyle(color: Color(0xFF534E59)),
+                            style: TextStyle(color: Color(0xFF5D5B59)),
                           ),
                         ),
                         SizedBox(height: 20),

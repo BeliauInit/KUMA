@@ -5,7 +5,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:kuma_apps/Navbar/curved_navbar.dart';
+import 'package:kuma_apps/Component/button.dart';
 
 class DetailManga extends StatefulWidget {
   const DetailManga({super.key});
@@ -66,17 +66,42 @@ class _DetailMangaState extends State<DetailManga> {
             child: Column(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Container(
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(32),
-                    child: Image.asset(
-                      'assets/images/Guitar Girls.jpg',
-                      fit: BoxFit.cover,
-                      width: 400,
-                      height: 280,
+                Column(
+                  children: [
+                    Container(
+                      child: Center(
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(32),
+                          child: Image.asset(
+                            'assets/images/Guitar Girls.jpg',
+                            fit: BoxFit.cover,
+                            width: 400,
+                            height: 280,
+                          ),
+                        ),
+                      ),
                     ),
-                  ),
+                    SizedBox(
+                      height: 12,
+                    ),
+                    Text(
+                      'Guitar Girl!!!',
+                      style: GoogleFonts.permanentMarker(
+                        fontWeight: FontWeight.w300,
+                        fontSize: 40,
+                        color: Colors.white,
+                        letterSpacing: 0.5,
+                      ),
+                    ),
+                    SizedBox(
+                      height: 12,
+                    ),
+                    btnDetailMa(onTap: () {
+                      print('This feature is offline');
+                    }, text: 'Continue',)
+                  ],
                 ),
               ],
             ),
